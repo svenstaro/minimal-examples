@@ -8,3 +8,4 @@ default:
 	g++ -std=c++0x -g -oinherit-from-template-class.bin inherit-from-template-class.cpp
 	g++ -std=c++0x -g -oncurses-chat.bin -lncurses -lsfml-system ncurses-chat.cpp
 	g++ -std=c++0x -g -omultimap-sharedptr.bin multimap-sharedptr.cpp
+	g++ -lsfml-system -osfml-clock.bin -std=c++0x sfml-clock.cpp 
