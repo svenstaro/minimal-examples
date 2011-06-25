@@ -35,6 +35,7 @@ int main() {
     while(frames_rendered < 100) {
         ogre_root->renderOneFrame();
         Ogre::WindowEventUtilities::messagePump();
+        ++frames_rendered;
     }
 
     delete ogre_root;
