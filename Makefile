@@ -10,3 +10,5 @@ default:
 	g++ -std=c++0x -g -omultimap-sharedptr.bin multimap-sharedptr.cpp
 	g++ -std=c++0x -g -lsfml-system -osfml-clock.bin -std=c++0x sfml-clock.cpp
 	g++ -std=c++0x -g -oboost-uuid-name-generator.bin boost-uuid-name-generator.cpp
+	g++ -std=c++0x -g -oboost-hash.bin boost-hash.cpp
+	g++ -std=c++0x -g -oboost-ptr-containers.bin boost-ptr-containers.cpp
