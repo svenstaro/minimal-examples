@@ -5,6 +5,7 @@ default:
 	g++ -std=c++0x -g -oabstract-derived-data-template-container.bin abstract-derived-data-template-container.cpp
 	g++ -std=c++0x -g -I/usr/include/OGRE/ -lOgreMain -oogre-init.bin ogre-init.cpp
 	g++ -std=c++0x -g -oshared-ptr.bin shared-ptr.cpp
+	g++ -std=c++0x -g -oshare_ptr-casting.bin share_ptr-casting.cpp
 	g++ -std=c++0x -g -oinherit-from-template-class.bin inherit-from-template-class.cpp
 	g++ -std=c++0x -g -oncurses-chat.bin -lncurses -lsfml-system ncurses-chat.cpp
 	g++ -std=c++0x -g -omultimap-sharedptr.bin multimap-sharedptr.cpp
