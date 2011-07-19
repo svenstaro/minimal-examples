@@ -13,3 +13,9 @@ default:
 	g++ -std=c++0x -g -obin/boost-uuid-name-generator.bin src/boost-uuid-name-generator.cpp
 	g++ -std=c++0x -g -obin/boost-hash.bin src/boost-hash.cpp
 	g++ -std=c++0x -g -obin/boost-ptr-containers.bin src/boost-ptr-containers.cpp
+
+vector-leak:
+	 g++ -std=c++0x -g  -obin/vector-leak.bin src/vector-leak.cpp
+	
+vector-leak-check:
+	valgrind --leak-check=full ./bin/vector-leak.bin
