@@ -6,7 +6,7 @@
 
 class Base {
 public:
-    virtual Base* Clone() = 0;
+    virtual std::shared_ptr<Base> Clone() = 0;
 };
 
 class Derived : public Base {
@@ -19,8 +19,8 @@ public:
         lol = 10;
     }
 
-    Base* Clone() {
-        return new Derived();
+    std::shared_ptr<Base> Clone() {
+        return std::shared_ptr<Base>(new Derived());
     }
 
     void SayHello() {
@@ -31,36 +31,41 @@ public:
 class Factory {
 public:
     void Register(Base* b) {
-        bs.push_back(b);
+        std::shared_ptr<Base> base(b);
+        bs.push_back(base);
     }
 
-    Base* Get(int index) {
-        return (Base*)&bs[index];
+    std::shared_ptr<Base> Get(int index) {
+        return bs[index];
     }
 
-    Base* GetClone(int index) {
+    std::shared_ptr<Base> GetClone(int index) {
         for(auto iter = bs.begin(); iter != bs.end(); ++iter) {
-            return (Base*)iter->Clone();
+            return (*iter)->Clone();
         }
-        return ((Base*)&bs[index])->Clone();
+        return bs[index]->Clone();
     }
 
-    boost::ptr_vector<Base> bs;
+    std::vector<std::shared_ptr<Base>> bs;
 };
 
 int main() {
     Factory f;
     
     // register prototype
-    f.Register(new Derived());
+    f.Register(new Derived()); // leak
 
     // get the prototype instance and clone it
     // Base* p = f.Get(0);
     // Base* b = p->Clone();
-    Base* b = f.GetClone(0);
-    
+    //Base* b = f.GetClone(0); // leak
+
     // make a safe pointer
-    std::shared_ptr<Base> b_ptr(b);
+    //std::shared_ptr<Base> b_ptr(b);
+    
+    std::shared_ptr<Base> b_ptr = f.GetClone(0);
+
+
 
     // convert to correct class
     // this is actually done after checking the type
