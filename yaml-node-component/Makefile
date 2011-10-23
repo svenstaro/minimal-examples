@@ -2,9 +2,11 @@ default: go
 
 go: bake run
 
-bake:
+clean:
 	[[ -d build ]] && rm -r build || true;
-	mkdir build && cd build; cmake .. && make
+
+bake:
+	mkdir -p build && cd build; cmake .. && make
 
 run:
 	cd build && ./test.bin
