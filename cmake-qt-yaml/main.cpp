@@ -45,7 +45,6 @@ Node* Node::Deserialize(const YAML::Node& node) {
 
     std::string uuid;
     node["uuid"] >> uuid;
-    std::cout << "::LOADING " << uuid << std::endl;
     n->mId = boost::uuids::string_generator()(uuid);
 
     try {
@@ -54,9 +53,7 @@ Node* Node::Deserialize(const YAML::Node& node) {
             if(c != nullptr)
                 n->AddChild(c);
         }
-    } catch(YAML::TypedKeyNotFound<std::string> e) {
-        std::cout << "// Warning: no children array" << std::endl;
-    }
+    } catch(YAML::TypedKeyNotFound<std::string> e) {} // no children, ignore
 
     return n;
 }
@@ -66,9 +63,6 @@ int main(int argc, char** argv) {
     base.AddChild(new Node);
     base.AddChild(new Node)->AddChild(new Node);
     base.AddChild(new Node);
-
-    //base.Display();
-    //
 
     // yaml test
     YAML::Emitter out;

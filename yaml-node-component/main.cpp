@@ -6,6 +6,9 @@
 #include <iostream>
 
 int main(int argc, char** argv) {
+    //qRegisterMetaType<ComponentA*>("ComponentA");
+    //qRegisterMetaType<ComponentB*>("ComponentB");
+
     Node base;
     base.AddChild(new Node)->AddComponent(new ComponentA);
     base.AddChild(new Node)->AddChild(new Node);

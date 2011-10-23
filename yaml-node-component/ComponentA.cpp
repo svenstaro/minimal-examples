@@ -1,5 +1,7 @@
 #include "ComponentA.hpp"
 
+ComponentA::ComponentA() {}
+
 void ComponentA::SayName() {
     std::cout << "Name: Component A" << std::endl;
 }
