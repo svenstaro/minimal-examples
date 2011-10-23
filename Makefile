@@ -20,9 +20,11 @@ const-reference-member:
 
 vector-leak:
 	 g++ -std=c++0x -g  -obin/vector-leak.bin src/vector-leak.cpp
+	 g++ -std=c++0x -g  -obin/vector-leak-shared_ptr.bin src/vector-leak-shared_ptr.cpp
 	
 vector-leak-check:
 	valgrind --leak-check=full ./bin/vector-leak.bin
+	valgrind --leak-check=full ./bin/vector-leak-shared_ptr.bin
 
 sfml-handle:
 	 g++ -std=c++0x -g -lsfml-window -lsfml-graphics -lsfml-system -obin/sfml-handle.bin src/sfml-handle.cpp
