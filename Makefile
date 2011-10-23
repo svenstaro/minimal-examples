@@ -15,6 +15,9 @@ default:
 	g++ -std=c++0x -g -obin/boost-hash.bin src/boost-hash.cpp
 	g++ -std=c++0x -g -obin/boost-ptr-containers.bin src/boost-ptr-containers.cpp
 
+const-reference-member:
+	g++ -std=c++0x -g  -obin/const-reference-member.bin src/const-reference-member.cpp
+
 vector-leak:
 	 g++ -std=c++0x -g  -obin/vector-leak.bin src/vector-leak.cpp
 	
@@ -23,3 +26,6 @@ vector-leak-check:
 
 sfml-handle:
 	 g++ -std=c++0x -g -lsfml-window -lsfml-graphics -lsfml-system -obin/sfml-handle.bin src/sfml-handle.cpp
+
+reinterpret:
+	g++ -std=c++0x -g -lsfml-window -lsfml-graphics -lsfml-system -obin/reinterpret.bin src/reinterpret.cpp 
