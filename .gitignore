@@ -1,2 +1,3 @@
 *.bin
 Ogre.log
+build/
