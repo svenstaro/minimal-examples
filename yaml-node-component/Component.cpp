@@ -1,7 +1,6 @@
 #include "Component.hpp"
 
 #include "Node.hpp"
-
 #include <QMetaType>
 
 Component::Component()
@@ -32,7 +31,7 @@ Component* Component::Deserialize(const YAML::Node& node) {
     }
 
     int meta_type_id = QMetaType::type(type.c_str());
-    if(meta_type_id == -1) {
+    if(meta_type_id == 0) {
         std::cerr << "Invalid component type: " << type << std::endl;
         return nullptr;
     }

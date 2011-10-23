@@ -9,4 +9,6 @@ public:
     void SayName();
 };
 
+Q_DECLARE_METATYPE(ComponentB*)
+
 #endif

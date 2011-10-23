@@ -2,6 +2,7 @@
 #define COMPONENT
 
 #include <QObject>
+#include <QMetaType>
 #include <iostream>
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
