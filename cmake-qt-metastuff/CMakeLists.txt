@@ -4,8 +4,8 @@ project(test)
 
 find_package(Qt4 REQUIRED)
 
-set(test_SOURCES Node.cpp main.cpp)
-set(test_HEADERS Node.hpp)
+set(test_SOURCES Component.cpp SpecializedComponent.cpp Node.cpp main.cpp)
+set(test_HEADERS Component.hpp SpecializedComponent.hpp Node.hpp)
 qt4_wrap_cpp(test_HEADERS_MOC ${test_HEADERS})
 include(${QT_USE_FILE})
 add_definitions(${QT_DEFINITIONS})

@@ -2,14 +2,22 @@
 #define NODE_HPP
 
 #include <QtCore/QObject>
+#include <QMetaType>
+
+#include <string>
 
 class Node : public QObject {
     Q_OBJECT
 public:
     Node();
+    Node(const Node& other);
     ~Node();
 
-    void DoStuff();
+    void ShowName();
+
+    std::string mName;
 };
+//Q_DECLARE_METATYPE(Node)
+Q_DECLARE_METATYPE(Node*)
 
 #endif

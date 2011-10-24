@@ -2,10 +2,14 @@
 
 #include <iostream>
 
-Node::Node() {}
+Node::Node() {
+    mName = "node";
+}
+
+Node::Node(const Node& other) {}
 
 Node::~Node() {}
 
-void Node::DoStuff() {
-    std::cout << "lol" << std::endl;
+void Node::ShowName() {
+    std::cout << mName << std::endl;
 }
