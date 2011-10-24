@@ -8,7 +8,6 @@ class ComponentB : public Component {
 public:
     void SayName();
 };
-
-Q_DECLARE_METATYPE(ComponentB*)
+//Q_DECLARE_METATYPE(ComponentB)
 
 #endif

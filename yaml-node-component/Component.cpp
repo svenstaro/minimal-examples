@@ -7,6 +7,10 @@ Component::Component()
     : mId(boost::uuids::random_generator()()) {
 }
 
+Component::Component(const Component& other) {
+    assert(false && "OH GOD DON'T USE THIS COPY CONSTRUCTOR");
+}
+
 Component::~Component() {}
 
 void Component::Serialize(YAML::Emitter& out) {

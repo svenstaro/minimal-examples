@@ -12,7 +12,6 @@ public:
     void OnSerialize(YAML::Emitter& out);
     void OnDeserialize(const YAML::Node& node);
 };
-
-Q_DECLARE_METATYPE(ComponentA*)
+//Q_DECLARE_METATYPE(ComponentA)
 
 #endif

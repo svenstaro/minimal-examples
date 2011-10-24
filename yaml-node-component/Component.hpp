@@ -16,6 +16,7 @@ class Component : public QObject {
     Q_OBJECT
 public:
     Component();
+    Component(const Component& other);
     virtual void SayName() = 0;
     virtual ~Component() = 0;
     
