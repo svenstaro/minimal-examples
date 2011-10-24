@@ -6,6 +6,8 @@ SpecializedComponent::SpecializedComponent() {
     mName = "node";
 }
 
+SpecializedComponent::SpecializedComponent(const SpecializedComponent& other) {}
+
 SpecializedComponent::~SpecializedComponent() {}
 
 void SpecializedComponent::ShowName() {

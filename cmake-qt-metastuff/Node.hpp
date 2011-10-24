@@ -17,7 +17,5 @@ public:
 
     std::string mName;
 };
-//Q_DECLARE_METATYPE(Node)
-Q_DECLARE_METATYPE(Node*)
 
 #endif

@@ -8,15 +8,15 @@
 #include <string>
 
 class SpecializedComponent : public Component {
-    //Q_OBJECT
+    Q_OBJECT
 public:
     SpecializedComponent();
+    SpecializedComponent(const SpecializedComponent& other);
     ~SpecializedComponent();
 
     void ShowName();
 
     std::string mName;
 };
-Q_DECLARE_METATYPE(SpecializedComponent)
 
 #endif

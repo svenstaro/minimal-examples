@@ -7,8 +7,8 @@
 
 #include <string>
 
-class Component /*: public QObject*/ {
-    //Q_OBJECT
+class Component : public QObject {
+    Q_OBJECT
 public:
     virtual void ShowName() = 0;
     virtual ~Component() = 0;
